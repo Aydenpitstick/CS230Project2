@@ -18,6 +18,13 @@ int convertHexToDec(char hex){
 }
 
 int convertDecToBin(int deci){
+    for (int bits = 3; bits >=0; bits-- )
+    {
+        int binary = (deci >> bits) & 1;
+        printf("%d", binary);
+    }
+    return 0;
+    
 }
 
 
@@ -36,12 +43,14 @@ int main(){
 
         if(dec != -1){
             printf("Decimal: %d\n", dec);
+            printf("Binary: ");
+            convertDecToBin(dec);
+            printf("\n");
         }
 
         else{
             printf("Invalid Hex!\n");
         }
-        
 
     }
    
